@@ -30,15 +30,33 @@
         </a-asset-item>
       </a-assets>
 
+      <a-assets>
+        <a-asset-item id="snake" src="assets/three-models/snake/snake-color.gltf"></a-asset-item>
+      </a-assets>
+
+      <a-marker 
+        cursor="fuse: false; rayOrigin: mouse;"
+        preset='custom' 
+        type='pattern' 
+        url='three-models/snake/pattern-snake-model.patt'
+        emitevents="true"
+      >
+        <a-entity 
+          position="0 0 0"
+          scale="0.4 0.4 0.4" 
+          gltf-model="#snake" 
+          gesture-handler
+        >
+        </a-entity>
+      </a-marker>
+
       <a-marker
         preset="hiro"
         raycaster="objects: .clickable"
         emitevents="true"
         cursor="fuse: false; rayOrigin: mouse;"
-        id="markerA"
       >
         <a-entity
-          id="bowser-model"
           gltf-model="#bowser"
           position="0 0 0"
           scale="0.05 0.05 0.05"
